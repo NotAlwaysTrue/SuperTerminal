@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QTgENXrornI=",
+  "dgSpecHash": "WT+If/ErwAY=",
   "success": true,
-  "projectFilePath": "E:\\SteamLibrary\\steamapps\\common\\Barotrauma\\LocalMods\\SuperTerminal\\.AssemblyCSharpSource\\SuperTerminal\\ClientProject\\WindowsClient.csproj",
+  "projectFilePath": "E:\\SteamLibrary\\steamapps\\common\\Barotrauma\\LocalMods\\SuperTerminal\\.AssemblyCSharpSource\\SuperTerminal\\ClientProject\\LinuxClient.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

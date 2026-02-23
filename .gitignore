@@ -3,3 +3,5 @@
 
 # VS local cache are also not needed
 /.AssemblyCSharpSource/SuperTerminal/.vs
+
+.AssemblyCSharpSource/SuperTerminal/*/obj

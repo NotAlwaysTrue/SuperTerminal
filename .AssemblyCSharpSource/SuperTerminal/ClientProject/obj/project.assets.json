@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\SteamLibrary\\steamapps\\common\\Barotrauma\\LocalMods\\SuperTerminal\\.AssemblyCSharpSource\\SuperTerminal\\ClientProject\\WindowsClient.csproj",
+      "projectUniqueName": "E:\\SteamLibrary\\steamapps\\common\\Barotrauma\\LocalMods\\SuperTerminal\\.AssemblyCSharpSource\\SuperTerminal\\ClientProject\\LinuxClient.csproj",
       "projectName": "SuperTerminal",
-      "projectPath": "E:\\SteamLibrary\\steamapps\\common\\Barotrauma\\LocalMods\\SuperTerminal\\.AssemblyCSharpSource\\SuperTerminal\\ClientProject\\WindowsClient.csproj",
+      "projectPath": "E:\\SteamLibrary\\steamapps\\common\\Barotrauma\\LocalMods\\SuperTerminal\\.AssemblyCSharpSource\\SuperTerminal\\ClientProject\\LinuxClient.csproj",
       "packagesPath": "C:\\Users\\21368\\.nuget\\packages\\",
       "outputPath": "E:\\SteamLibrary\\steamapps\\common\\Barotrauma\\LocalMods\\SuperTerminal\\.AssemblyCSharpSource\\SuperTerminal\\ClientProject\\obj\\",
       "projectStyle": "PackageReference",
