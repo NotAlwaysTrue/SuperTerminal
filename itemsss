@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="超级终端" identifier="super_terminal" category="Electrical" Tags="smallitem,logic,highpriority" cargocontaineridentifier="metalcrate" scale="0.8" impactsoundtag="impact_metal_light" isshootable="true" GrabWhenSelected="true">
+    <Upgrade gameversion="0.10.0" scale="*0.5" />
+    <Sprite texture="%ModDir%/itemsss/super_terminal.png" depth="0.8" sourcerect="65,4,60,77" origin="0.53475666,0.46447822" canflipx="false" />
+    <Body width="50" height="74" density="20" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand,LeftHand" msg="ItemMsgDetachWrench" MsgWhenDropped="ItemMsgPickupSelect" PickingTime="5.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true" attachedbydefault="true">
+      <RequiredItem items="wrench,deattachtool" excludeditems="multitool" type="Equipped" />
+    </Holdable>
+    <!-- 存储槽 -->
+    <ItemContainer capacity="1" maxstacksize="64" hideitems="true" drawinventory="true" uilabel="存储" allowuioverlap="true" msg="ItemMsgPutItemHere" slotsperrow="1" />
+    <!-- 产出槽 -->
+    <ItemContainer capacity="1" maxstacksize="64" hideitems="true" drawinventory="true" uilabel="产出" allowuioverlap="true" msg="ItemMsgPutItemHere" slotsperrow="1" />
+    <Terminal canbeselected="true" msg="ItemMsgInteractSelect" AllowInGameEditing="false">
+      <GuiFrame relativesize="0.6,0.8" anchor="Center" style="ItemUI" />
+    </Terminal>
+  </Item>
+  <Item name="存储器" identifier="storage_entrance" tags="storage,highpriority" texturescale="1.0,1.0" scale="0.8" category="Decorative" AllowStealingContainedItems="true">
+    <Price baseprice="111">
+      <Price storeidentifier="merchantoutpost" minavailable="2" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="2" />
+      <Price storeidentifier="merchantresearch" minavailable="2" />
+      <Price storeidentifier="merchantmilitary" minavailable="2" />
+      <Price storeidentifier="merchantmine" minavailable="2" />
+    </Price>
+    <Deconstruct time="5">
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="5">
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="plastic" />
+    </Fabricate>
+    <sprite texture="%ModDir%/itemsss/super_terminal.png" sourcerect="0,0,62,64" depth="0.85" premultiplyalpha="false" origin="0.50831836,0.46929896" />
+    <DecorativeSprite texture="%ModDir%/itemsss/super_terminal.png" sourcerect="0,0,62,64" depth="0.845" origin="0.5,0.5">
+      <Conditional HasStatusTag="neq opened" />
+    </DecorativeSprite>
+    <DecorativeSprite texture="%ModDir%/itemsss/super_terminal.png" sourcerect="0,0,61,63" depth="0.84" origin="0.5305213,0.48010555">
+      <Conditional HasStatusTag="opened" />
+    </DecorativeSprite>
+    <Controller canbeselected="true" selectkey="Select" hidehud="false" drawuserbehind="false" noninteractablewhenflippedy="false" allowingameediting="false" drawhudwhenequipped="false" comparison="And">
+      <StatusEffect type="OnActive" target="This" tags="opened" duration="0.1" />
+      <StatusEffect type="OnActive" target="This" targetitemcomponent="ItemComponent" IsActive="true" setvalue="true" />
+      <StatusEffect type="OnActive" target="This" targetitemcomponent="Controller" allowingameediting="false" setvalue="true" oneshot="true" />
+    </Controller>
+    <Body height="48" width="62" density="23" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="itemmsgforceopencrowbar" PickingTime="5.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="true">
+      <RequiredItem tag="crowbaritem" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.8" setvalue="true" />
+      <StatusEffect type="Always" target="This" disabledeltatime="true" stackable="false" setvalue="true" condition="100" allowwhenbroken="true">
+        <Conditional attached="false" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="This">
+        <DropContainedItems />
+      </StatusEffect>
+    </Holdable>
+    <ItemContainer capacity="20" slotsperrow="5" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.5,0.5" anchor="Center" style="ItemUI" />
+    </ItemContainer>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.15,0.1" anchor="CenterLeft" absoluteoffset="20,20" style="ItemUI" />
+      <Button text="存储">
+        <StatusEffect type="OnUse" targettype="Contained" disabledeltatime="true">
+          <Sound file="%ModDir%/itemsss/storesound.ogg" type="OnUse" range="500" />
+          <Remove />
+        </StatusEffect>
+      </Button>
+    </CustomInterface>
+  </Item>
+</Items>
