@@ -1,1 +1,5 @@
+# We dont need MD file for our project
 *.md
+
+# VS local cache are also not needed
+/.AssemblyCSharpSource/SuperTerminal/.vs
